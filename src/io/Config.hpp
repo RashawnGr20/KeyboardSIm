@@ -39,7 +39,7 @@ struct Config {
     // --- Actuation ---
     double      strike_x        = 0.5;    
     double      strike_y        = 0.5;    
-    double      strike_amplitude = 1.0;  
+    double      strike_amplitude = 1.0e6;  
     double      strike_sigma    = 0.01;   
     double      strike_duration = 0.001;  
     StrikeShape strike_shape    = StrikeShape::RaisedCosine;
