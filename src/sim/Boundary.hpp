@@ -15,4 +15,4 @@ public:
     void apply(Grid& g) const override;
 };
 
-} // namespace ksim
+} 

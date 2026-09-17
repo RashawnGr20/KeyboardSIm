@@ -46,9 +46,8 @@ WaveSolver::WaveSolver(const Params& p) : p_(p) {
     alpha_y_ = static_cast<float>(ay * ay);
     dt_sq_   = static_cast<float>(dt_ * dt_);
 
-    // Damping-aware leapfrog:
-    //   u^{n+1}(1+γΔt) = 2u^n − (1−γΔt)u^{n-1} + Δt²·[c²∇²u^n + f^n]
-    // Precompute β = 1/(1+γΔt) and (1−γΔt) so the inner loop stays cheap.
+   
+  
     const double gdt = p.gamma * dt_;
     damp_beta_  = static_cast<float>(1.0 / (1.0 + gdt));
     damp_decay_ = static_cast<float>(1.0 - gdt);

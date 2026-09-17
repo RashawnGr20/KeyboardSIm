@@ -18,7 +18,7 @@ std::string step_filename(int step) {
     return std::string(buf);
 }
 
-} // namespace
+} 
 
 SnapshotWriter::SnapshotWriter(std::filesystem::path output_dir, double hx, double hy)
     : output_dir_(std::move(output_dir)), hx_(hx), hy_(hy) {}
@@ -64,4 +64,4 @@ void SnapshotWriter::write(const Grid& g, double t, int step) {
     ++write_count_;
 }
 
-} // namespace ksim
+}

@@ -9,8 +9,7 @@ namespace ksim {
 
 namespace {
 
-// Temporal envelope g(t), normalized so peak = 1 at the middle of the window.
-// Both shapes return zero outside [0, duration].
+
 double envelope(double tau, double duration, StrikeShape shape) {
     if (tau < 0.0 || tau > duration) return 0.0;
     const double u = tau / duration;
@@ -23,7 +22,7 @@ double envelope(double tau, double duration, StrikeShape shape) {
     return 0.0;
 }
 
-} // namespace
+} 
 
 Excitation::Excitation(const Params& p) : p_(p) {
     if (p.sigma <= 0.0) {
@@ -57,8 +56,7 @@ void Excitation::add_to(float* forcing_field,
     const double g = envelope(tau, p_.duration, p_.shape);
     if (g == 0.0) return;
 
-    // ±3σ covers 99.7% of the Gaussian; outside this box the contribution
-    // is smaller than the fp32 noise floor at typical amplitudes.
+
     const double half_box = 3.0 * p_.sigma;
     const int i_lo = std::max(0,      static_cast<int>(std::floor((p_.x0 - half_box) / hx)));
     const int i_hi = std::min(nx - 1, static_cast<int>(std::ceil ((p_.x0 + half_box) / hx)));
@@ -81,4 +79,4 @@ void Excitation::add_to(float* forcing_field,
     }
 }
 
-} // namespace ksim
+} 

@@ -10,10 +10,7 @@
 
 namespace ksim {
 
-// Logs u(x, y, t) for one or more fixed grid nodes to a CSV file, one row
-// per record() call. Probe positions from Config are snapped to the nearest
-// grid node at construction, so the per-step call is a couple of array
-// reads and a printf.
+
 class ProbeRecorder {
 public:
     ProbeRecorder(const std::vector<ProbeSpec>& probes,
