@@ -25,7 +25,6 @@ void assign_if_present(const toml::table& tbl, std::string_view key, T& out) {
     }
 }
 
-// Sub-section access with a clear error on wrong type.
 const toml::table* subtable(const toml::table& tbl, std::string_view key) {
     if (auto node = tbl.get(key)) {
         if (auto sub = node->as_table()) return sub;

@@ -36,7 +36,7 @@ struct Config {
     int    snapshot_interval = 50;    
     double cfl_safety        = 0.9;   
 
-    // --- Excitation ---
+    // --- Actuation ---
     double      strike_x        = 0.5;    
     double      strike_y        = 0.5;    
     double      strike_amplitude = 1.0;  
